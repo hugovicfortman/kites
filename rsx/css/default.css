@@ -1,0 +1,458 @@
+/* Enforce margin absence... */
+	html,
+	body{
+		padding:0px;
+		margin:0px;
+	}
+/*	Preloader is given default colour	*/
+			#page-preloader{
+				background-color:rgba(200,200,200,0.7);
+				width:100%;
+				height:2.5px;
+				position:fixed;
+				top:0px;
+				left:0px;
+				z-index:10000;
+			}
+			#page-preloader .inner{
+				background-color:#020202;
+				width:0%;
+				height:100%;
+				transition:all 0.9s ease;
+			}
+			#page-preloader[state="loaded"] .inner{
+				width:100%;
+				background:#336699;
+			}
+/*	The top scroller is fixed at bottom-right corner of page...	*/
+			#page-top-scroller{
+				position:fixed;
+				bottom:30px;
+				right:30px;
+				opacity:0.4;
+				transition:opacity 0.2s;
+				-moz-transition:opacity 0.2s;
+				-ms-transition:opacity 0.2s;
+				-o-transition:opacity 0.2s;
+				-webkit-transition:opacity 0.2s;
+			}
+				#page-top-scroller:hover{
+					opacity:1;
+				}
+/*	Wrapper is given margin to accomodate preloader...	*/
+	#wrapper{
+		margin-top:2.5px;
+		min-height:671px;/*mozilla-desktop-fix*/
+		min-height:100vh;
+		background-color:rgba(60,160,160,0.1);
+	}
+/************************************************************************/
+/*				CSS STARTS HERE				*****************************/
+
+
+
+
+			#header,
+			#header a{
+				color:#9999aa;
+				font-weight:bold;
+			}
+			#header nav{
+				margin-bottom:0px;
+			}
+			#header .header-offset{
+				height:47px;
+				width:100%;
+			}
+			.landing{
+				background-image: url('../images/above-adventure-aerial-air.jpg');
+				background-size:cover;
+			}
+			#header .navbar{
+				background-color:rgba(20,20,50,0.75);
+				border:0px;
+				transition: background-color 0.4s ease;
+				-webkit-transition: background-color 0.4s ease;
+				-moz-transition: background-color 0.4s ease;
+				-ms-transition: background-color 0.4s ease;
+				-o-transition: background-color 0.4s ease;
+			}
+			#header .navbar.hovering{
+				background-color:rgb(20,20,50);
+				border:0px;
+			}
+			#header .navbar .navbar-brand{
+				color:transparent;
+				transition: color 0.4s ease;
+				-webkit-transition: color 0.4s ease;
+				-moz-transition: color 0.4s ease;
+				-ms-transition: color 0.4s ease;
+				-o-transition: color 0.4s ease;
+			}
+			#header .navbar-nav a{
+				transition:all 0.3s ease;
+				-moz-transition:all 0.3s ease;
+				-webkit-transition:all 0.3s ease;
+			}
+			#header .navbar-nav .active > a{
+				color:#557766;
+				background-color:rgba(20,20,50,0.75);
+				padding-bottom:10px;
+				border-bottom:5px solid rgba(150,250,150,0.3);
+			}
+				#header .navbar-nav li:not(.active):hover a{
+					color:#445588;
+					background-color:rgba(20,20,50,0.3);
+					padding-bottom:10px;
+					border-bottom:5px solid rgba(150,250,150,0.1);
+				}
+				#header .navbar-nav .active:hover a{
+					color:#668888;
+					background-color:rgba(20,20,60,0.75);
+					padding-bottom:10px;
+					border-bottom:5px solid rgba(150,250,200,0.3);
+				}
+			[is-mobile] #header .navbar-nav{
+				background-color:rgba(20,120,60,0.9);
+			}
+			[is-mobile] #header .navbar-nav li > a{
+				border-bottom:2px solid rgba(20,20,60,0.3) !important;
+			}
+				[is-mobile] #header .navbar-nav li:not(.active):hover > a{
+					border-left:5px solid rgba(150,250,150,0.1);
+					color:#bbbbaa;
+				}
+				[is-mobile] #header .navbar-nav .active:hover > a{
+					border-left:5px solid rgba(150,250,200,0.3);
+					color:#aabbbb;
+				}
+				[is-mobile] #header .navbar .navbar-brand,
+				.minor-landing #header .navbar-brand,
+				#header .navbar.hovering .navbar-brand{
+					color:inherit;
+				}
+			#header,
+			#banner,
+			#banner .jumbotron{
+				background-color:transparent;
+			}
+			#banner .jumbotron{
+				margin-bottom:0px;
+				padding:226px 10px;/*large screens*/
+				background-color:rgba(20,20,50,0.75);
+			}
+			.minor-banner{
+				background:rgba(20,120,60,0.65);
+				padding:10px 0px;
+				margin:0px;
+				border:0px;
+				text-align:center;
+			}
+			.well{
+				background-color:rgba(20,20,50,0.1);
+			}
+			
+			/*	All sections are given vertical paddings....	*/
+			#wrapper > section{
+				padding:50px 0px;
+			}
+			/*	First Section is given padding at top....	*/
+			section#one{
+				padding-top:75px;
+			}
+			
+			
+			#social{
+				background:rgba(20,120,60,0.75);
+				padding:30px 0px;
+			}
+			#footer{
+				background:rgb(30,40,65);
+				padding:20px 0px;
+			}
+			
+			
+			.social-links li{
+				width:2em;
+				height:2em;
+				line-height:2em;
+				font-size:1.5em;
+				background:rgba(175,175,255,0.75);	/*rgba(175,175,175,0.7);*/
+				text-align:center;
+				border-radius:50%;
+				margin:5px;
+				transition: background 0.2s ease;
+				-webkit-transition: background 0.2s ease;
+				-moz-transition: background 0.2s ease;
+				-ms-transition: background 0.2s ease;
+				-o-transition: background 0.2s ease;
+				padding:0px;
+			}
+			.social-links a{
+				display:block;
+				width:100%;
+				height:100%;
+				color:inherit;
+				border-radius:50%;
+			}
+			.social-links li:hover a{
+			}
+			.social-links li:hover{
+				background:rgb(30,40,65);
+			}
+			/*	Themical colouring of social media icons	*/
+			.social-links li:hover .icon-facebook{
+				color:#3b5998;
+			}
+			.social-links li:hover .icon-twitter{
+				color:#55acee;
+			}
+			.social-links li:hover .icon-dribbble{
+				color:#ea4c89;
+			}
+			.social-links li:hover .icon-instagram{
+				color:#e95950;
+			}
+			/*	Block for scrolling back to top		*/
+			.bouncy-block{
+				background:rgb(20,20,50);
+				height:40px;
+				width:40px;
+				display:inline-block;
+				text-align:center;
+				line-height:40px;
+			}
+			.bolder{
+				font-weight:bold;
+			}
+			.theme-icon{
+				border:5px solid #444444;
+				border-radius:50%;
+				height:120px;
+				width:120px;
+				line-height:130px;
+				display:inline-block;
+				cursor:pointer;
+				transition:all 0.2s ease;
+				-moz-transition:all 0.2s ease;
+				-ms-transition:all 0.2s ease;
+				-o-transition:all 0.2s ease;
+				-webkit-transition:all 0.2s ease;
+			}
+			.img-text-wrapped.pull-left{
+				margin:0.5em 2.25em 1.65em 0.5em;
+			}
+			.img-text-wrapped.pull-right{
+				margin:0.5em 0.5em 1.65em 2.25em;
+			}
+			.table-wrap{
+				overflow-x:auto;
+				max-width:100%;
+			}
+			.btn{
+				border-radius:2px;
+			}
+			.image-gallery .row{
+			}
+			.image-gallery img{
+				width:100%;
+				height:100%;
+				margin:15px auto;
+			}
+			.bold{
+				font-weight:bold;
+			}
+			.italic{
+				font-style:italic;
+			}
+			.underline{
+				display:inline-block;
+				padding:0.1px;
+				border-bottom:1px solid #888888;
+			}
+			.underline-dotted{
+				display:inline-block;
+				padding:0.1px;
+				border-bottom:1px dotted #888888;
+			}
+			mark{
+				background-color:#f5ff99;
+				padding:2px 4px;
+				display:inline-block;
+			}
+			code{
+				background-color:rgba(0,25,25,0.9);
+				padding:2px 4px;
+				border-radius:2px;
+				display:inline-block;
+			}
+			blockquote{
+				background:rgba(60,190,60,0.2);
+				border-color:rgb(90,190,150);
+				padding:15px 20px;
+			}
+			pre{
+				background:rgb(30,40,65);
+				padding:25px 15px;
+				color:#c1d2e3;
+			}
+			.pre-comment{
+				color:#33ee33;
+			}
+			code,
+			.pre-keyword{
+				color:#33aaff;
+			}
+			.pre-string{
+				color:#eeee33;
+			}
+			.pre-variable{
+				color:#e333e3;
+			}
+			.table th{
+				background-color:rgb(150,170,200);
+			}
+			.table td{
+				background-color:rgb(180,200,230);
+			}
+			.table-striped tr:nth-child(odd) td{
+				background-color:rgb(180,200,230);
+			}
+			.table-striped tr:nth-child(even) td{
+				background-color:rgb(150,200,210);
+			}
+			.table-hover tr:hover td{
+				background-color:rgba(130,180,190,0.9) !important;
+			}
+			.table tr.danger td{
+				background-color:rgba(230,130,130,0.8) !important;
+			}
+				.table-hover tr.danger:hover td{
+					background-color:rgba(200,120,120,0.9) !important;
+				}
+			.table tr.success td{
+				background-color:rgba(120,200,120,0.8) !important;
+			}
+				.table-hover tr.success:hover td{
+					background-color:rgba(110,180,110,0.9) !important;
+				}
+			.table tr.warning td{
+				background-color:rgba(230,230,120,0.8) !important;
+			}
+				.table-hover tr.warning:hover td{
+					background-color:rgba(200,200,110,0.9) !important;
+				}
+			.txt-colored{
+				color:rgb(20,60,120);
+				border-color:rgb(20,60,120);
+			}
+			.map-frame-holder{
+				padding:0px;
+				height:400px;
+			}
+			.map-frame-holder iframe{
+				width:100%;
+				height:100%;
+			}
+			.inline-block{
+				display:inline-block;
+			}
+			.theme-icon:hover{
+				background-color:rgb(20,60,120);
+				border-color:#dddddd;
+				color:#dddddd;
+				box-shadow: 0px 0px 7px rgba(20,60,120,0.4);
+			}
+			.carousel-square .carousel-content{
+				margin-bottom:50px;
+				background:rgba(60,160,160,0.4);
+				padding:20px 0px;
+			}
+			.carousel-square .carousel-indicators li{
+				list-style-type:none;
+				display:inline-block;
+				width:15px;
+				height:15px;
+				border:2px solid #889988;
+				margin:5px;
+				border-radius:0px;
+			}
+			.carousel-square .carousel-indicators li.active{
+				border:2px solid #ccdddd;
+				background-color:rgb(50,60,85);
+			}
+			.carousel-square .carousel-control{
+				position:absolute;
+				height:30px;
+				top:initial;
+				bottom:20px;
+				background:rgba(60,160,160,0.5);
+			}
+			section.featured{
+				background:rgb(30,40,65);
+			}
+
+			.bg-imaged{
+				background-image:url('../images/rains.jpg');
+				background-size:cover;
+				padding:0px !important;
+			}
+			.bg-imaged .inner{
+				background-color:rgba(20,20,50,0.85);
+				padding:75px 0px;
+			}
+			.bg-imaged,
+			.major-banner,
+			section.featured,
+			#footer{
+				color:#cccccf;
+			}
+			.text-large{
+				font-size:500%;
+			}
+			.call-to-action{
+				margin:30px 0px;
+			}
+			.container-fluid-strip{
+				width:100%;
+				margin:0px;
+			}
+			/*	large screens	*/
+			#banner .landing-action{
+				margin-top:100px;
+				transition: margin 0.4s ease;
+				-moz-transition: margin 0.4s ease;
+				-ms-transition: margin 0.4s ease;
+				-o-transition: margin 0.4s ease;
+				-webkit-transition: margin 0.4s ease;
+			}
+
+
+
+/*************************************************************************/
+	.quote .quote-author{
+		display:block;
+		text-align:right;
+		color:#aaaaaa;
+	}
+	.quote .quote-author:before{
+		content:'__ ';
+	}
+/*	Media queries...	*/
+			@media screen and (max-width: 750px){
+				#banner .jumbotron{
+					padding:100px 10px;/*medium screens*/
+				}
+			}
+			@media screen and (max-width: 450px){
+				/*	small screens	*/
+				#banner .landing-action{
+					margin-top:20px;
+				}
+				#banner .jumbotron{
+					padding:50px 10px;/*small screens*/
+				}
+				.col-xxs-12{
+					width:100%;
+				}
+			}
